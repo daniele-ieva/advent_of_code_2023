@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Day 2 Part 1" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.adventofcode.Main" />
+    <module name="d2p1" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
