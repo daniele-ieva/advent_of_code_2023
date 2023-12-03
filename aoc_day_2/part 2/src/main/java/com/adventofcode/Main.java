@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         var tester = new ExtractionTester();
-        File source = new File("aoc_day_2/part 1/puzzle_input");
+        File source = new File("aoc_day_2/part 2/puzzle_input");
         Scanner scanner = new Scanner(source);
         int sum = 0;
         String line;
