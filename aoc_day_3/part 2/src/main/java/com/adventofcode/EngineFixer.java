@@ -15,7 +15,7 @@ public class EngineFixer {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
                 in = input.get(y).toCharArray()[x];
-                if (in == '.') {
+                if (in == '*') {
                     schematic[x][y] = -1;
                     continue;
                 }
@@ -35,8 +35,8 @@ public class EngineFixer {
         int number;
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                if (schematic[x][y] >= 0 && checkNeighbors(x, y)) {
-                    number = findNumber(x, y);
+                if (schematic[x][y] == -1) {
+                    number = checkNeighbors(x, y);
                     sum += number;
                 }
             }
@@ -44,18 +44,27 @@ public class EngineFixer {
         return sum;
     }
 
-    private boolean checkNeighbors(int x, int y) {
+    private int checkNeighbors(int x, int y) {
         boolean found = false;
+        int ratio = 1;
+        int count = 0;
         for (int of_y = -1; of_y <= 1; of_y++) {
             for (int of_x = -1; of_x <= 1; of_x++) {
                 if (x + of_x >= 0 && x + of_x < width && y + of_y >= 0 && y + of_y < height) {
-                    if (schematic[x + of_x][y + of_y] < -1) {
-                        return true;
+                    if (schematic[x + of_x][y + of_y] >= 0) {
+                        count++;
+                        ratio *= findNumber(x + of_x, y + of_y);
+                        while (of_x <= 1 && x + of_x < width && schematic[x + of_x][y + of_y] >= 0) {
+                            of_x++;
+                        }
                     }
                 }
             }
         }
-        return found;
+        if (count == 2) {
+            return ratio;
+        }
+        return 0;
     }
 
     private int findNumber(int x, int y) {
@@ -66,17 +75,14 @@ public class EngineFixer {
             value *= 10;
             value += schematic[x + offset][y];
             tens *= 10;
-            schematic[x + offset][y] = -1;
             offset++;
         }
         offset = -1;
         while (x + offset >= 0 && schematic[x + offset][y] >= 0) {
             value += schematic[x + offset][y] * tens;
             tens *= 10;
-            schematic[x + offset][y] = -1;
             offset--;
         }
-        schematic[x][y] = -1;
         return value;
     }
 }
