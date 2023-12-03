@@ -30,7 +30,6 @@ public class Calibrator {
         line = lettersToNumbers(line);
         int first = Integer.parseInt(line.substring(0, 1));
         int last = Integer.parseInt(line.substring(line.length() - 1));
-        System.out.println(first * 10 + last);
         return first * 10 + last;
     }
 }

@@ -1,7 +1,6 @@
 package com.adventofcode;
 
 
-import lombok.Getter;
 import lombok.NonNull;
 
 import java.util.ArrayList;
@@ -30,7 +29,6 @@ public class ExtractionTester {
                 map.put(keys.get(i), values.get(i));
             }
         }
-        System.out.println(map);
         power = map.get("red") * map.get("green") * map.get("blue");
         return power;
     }
@@ -64,7 +62,6 @@ public class ExtractionTester {
         return new DoubleList(keys, values);
     }
 
-    @Getter
     public record DoubleList(ArrayList<String> stringList, ArrayList<Integer> integerList) {
     }
 }
