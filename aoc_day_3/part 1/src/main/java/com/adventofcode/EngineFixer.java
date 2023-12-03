@@ -30,6 +30,7 @@ public class EngineFixer {
         }
     }
 
+    // Start the program
     public int fix() {
         int sum = 0;
         int number;
@@ -44,6 +45,7 @@ public class EngineFixer {
         return sum;
     }
 
+    // Check if there is a symbol different from '.' in the neighboring cells (diagonals included)
     private boolean checkNeighbors(int x, int y) {
         boolean found = false;
         for (int of_y = -1; of_y <= 1; of_y++) {
@@ -58,6 +60,8 @@ public class EngineFixer {
         return found;
     }
 
+    // Find the number that includes the digit found in position x, y and replace it with -1 in order to avoid counting
+    // it twice
     private int findNumber(int x, int y) {
         int offset = 1;
         int tens = 10;

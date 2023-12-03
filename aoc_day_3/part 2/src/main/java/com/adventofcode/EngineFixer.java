@@ -29,7 +29,8 @@ public class EngineFixer {
             }
         }
     }
-
+    
+    // Start the program
     public int fix() {
         int sum = 0;
         int number;
@@ -44,6 +45,8 @@ public class EngineFixer {
         return sum;
     }
 
+    // Check if there are exactly two numbers neighboring the * character (diagonals included), if so return
+    // their product
     private int checkNeighbors(int x, int y) {
         boolean found = false;
         int ratio = 1;
@@ -67,6 +70,7 @@ public class EngineFixer {
         return 0;
     }
 
+    // Find the number comprising the digit found in position x, y of the grid
     private int findNumber(int x, int y) {
         int offset = 1;
         int tens = 10;

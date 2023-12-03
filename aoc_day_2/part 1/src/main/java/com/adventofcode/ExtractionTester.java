@@ -7,19 +7,16 @@ import java.util.Objects;
 
 public class ExtractionTester {
     private final HashMap map = new HashMap<String, Integer>();
-    private final String[] colors = {
-            "red",
-            "green",
-            "blue"
-    };
 
     public ExtractionTester(int red, int green, int blue) {
-        map.put(colors[0], red);
-        map.put(colors[1], green);
-        map.put(colors[2], blue);
+        map.put("red", red);
+        map.put("green", green);
+        map.put("blue", blue);
     }
 
 
+    // Return true if all the extractions described by the input string are valid given the number of marbles set in
+    // the constructor
     public boolean test(String input) {
         String[] extractions = input.split(";");
         String[] keypairs;
