@@ -18,22 +18,17 @@ public class Calibrator {
 
     public static String lettersToNumbers(String input) {
         for (int i = 0; i < numbers.length; i++) {
-            input = input.replaceAll(numbers[i], numbers[i] + String.valueOf(i));
+            input = input.replaceAll(numbers[i], numbers[i] + i + numbers[i]);
         }
+        input = input.replaceAll("[^0-9]", "");
         return input;
     }
 
     public static int findDigits(@NonNull String line) {
         line = lettersToNumbers(line);
-        int first = -1, last = -1;
-        for (char c : line.toCharArray()) {
-            if (c >= '0' && c <= '9') {
-                last = (int) c - '0';
-                if (first == -1) {
-                    first = last;
-                }
-            }
-        }
+        int first = Integer.parseInt(line.substring(0, 1));
+        int last = Integer.parseInt(line.substring(line.length() - 1));
+        System.out.println(first * 10 + last);
         return first * 10 + last;
     }
 }
