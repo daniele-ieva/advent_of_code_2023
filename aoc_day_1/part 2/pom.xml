@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.adventofcode</groupId>
-    <artifactId>aoc_day_1_p_2</artifactId>
+    <artifactId>d1p2</artifactId>
     <version>1.0</version>
 
     <dependencies>
