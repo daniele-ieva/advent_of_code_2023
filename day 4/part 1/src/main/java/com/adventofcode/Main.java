@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        File source = new File("aoc_day_4/part 1/puzzle_input");
+        File source = new File("day 4/part 1/puzzle_input");
         Scanner scanner = new Scanner(source);
         int sum = 0;
         while (scanner.hasNext()) {
