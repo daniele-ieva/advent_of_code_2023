@@ -10,9 +10,11 @@
         <module name="d1p1" />
         <module name="d1p2" />
         <module name="d2p1" />
+        <module name="d4p2" />
         <module name="d2p2" />
         <module name="d3p1" />
         <module name="d3p2" />
+        <module name="d4p1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
