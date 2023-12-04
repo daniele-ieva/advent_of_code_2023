@@ -18,6 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="advent_of_code_2023" target="1.5" />
       <module name="day1part2" target="21" />
     </bytecodeTargetLevel>
   </component>
