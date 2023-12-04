@@ -18,10 +18,7 @@ public class WinningNumbers {
         for (var win : winning) {
             for (var num : numbers) {
                 if (win.equals(num)) {
-                    result *= 2;
-                    if (result == 0) {
-                        result = 1;
-                    }
+                    result++;
                 }
             }
         }
